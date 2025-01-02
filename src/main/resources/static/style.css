@@ -1,0 +1,203 @@
+/* Basic styles */
+body {
+     font-family: Arial, sans-serif;
+     background: linear-gradient(to top, #001A6E, #074799, #009990, #E1FFBB);
+
+     justify-content: center;
+     /* Centers content horizontally */
+     align-items: center;
+     /* Centers content vertically */
+     height: 100vh;
+}
+
+/* Header styles */
+header {
+     background: linear-gradient(to right, #E1FFBB, #001A6E);
+     padding: 20px;
+     text-align: center;
+}
+
+h1 {
+     margin: 0;
+     color: #140045;
+}
+
+/* Table styles */
+table {
+     position: relative;
+     border-radius: 20px;
+     border-color: red;
+     border-collapse: collapse;
+     width: 80%;
+     margin: 0 auto;
+     margin-top: 10px;
+}
+
+th,
+td {
+     padding: 10px;
+     border: 3px solid #ff0101;
+     text-align: center;
+}
+
+th {
+     background-color: #5d6cd1;
+}
+
+/* Action buttons styles */
+a {
+     text-decoration: none;
+     color: #411f7c;
+     padding: 5px 10px;
+     border: 1px solid #f70000;
+     border-radius: 3px;
+     transition-delay: 2ms;
+}
+
+a:hover {
+     animation-duration: 10ms;
+     color: red;
+     background-color: #32f3e9;
+
+}
+
+.addbutton {
+
+     color: rgb(223, 223, 223);
+     background: linear-gradient(to left, #E1FFBB, #001A6E);
+     padding: 10px 80px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin: 20px 110px;
+     border-radius: 40px;
+     transition: background-color 0.5s;
+
+}
+
+.addbutton:hover {
+
+     color: rgb(34, 255, 0);
+     background: radial-gradient(#b6ff57, #001A6E);
+     border: rgb(85, 0, 255);
+     cursor: crosshair;
+     border-radius: 40px;
+
+}
+
+/* Hidden ID field styles */
+.hidden {
+     display: none;
+}
+
+
+/* Custom Button Styling for the Edit Button */
+.edit-btn,
+.delete-btn {
+     background-color: #00f2ff;
+     color: rgb(76, 0, 255);
+     border: 2px solid rgb(10, 10, 109);
+     padding: 6px 12px;
+     cursor: pointer;
+     border-radius: 4px;
+     box-shadow: black;
+     transition: background-color 0.3s;
+}
+
+.edit-btn:hover {
+     background-color: #03ec45;
+     color: rgb(255, 255, 255);
+
+}
+
+.delete-btn:hover {
+     background-color: red;
+     color: white;
+}
+
+/* here all the styles for addTask.html file */
+.addTaskBody {
+     display: flex;
+}
+
+#addTaskHeading {
+     text-align: center;
+     color: #E1FFBB;
+}
+
+/* Form Container */
+.form-style {
+
+     background: radial-gradient(#001A6E, #074799);
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     padding: 20px;
+     width: 100%;
+     max-width: 400px;
+}
+
+/* Form Labels */
+label {
+     margin-top: 20px;
+     font-size: 20px;
+     color: #fd0101;
+     margin-bottom: 8px;
+     display: flex;
+}
+
+/* Input Fields */
+input[type="text"],
+textarea {
+     width: 70%;
+     padding: 10px;
+     margin: 8px 0 15px 0;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     font-size: 16px;
+}
+
+/* Textarea Styling */
+textarea {
+     resize: vertical;
+     min-height: 100px;
+}
+
+/* Submit and Reset Button Styling */
+input[type="submit"],
+input[type="reset"] {
+     width: 48%;
+     padding: 10px;
+     font-size: 20px;
+     color: #E1FFBB;
+     background-color: #286896;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     margin: 10px 1% 0 0;
+     transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+     background-color: #025e06;
+}
+
+input[type="reset"]:hover {
+     background-color: red;
+     color: white;
+}
+
+/* Adjust Modal for Mobile Screens */
+@media (max-width: 768px) {
+     .modal-content {
+          padding: 15px;
+     }
+
+     .modal-body .form-control {
+          font-size: 0.9rem;
+     }
+
+     #saveBtn {
+          padding: 8px 16px;
+     }
+}
