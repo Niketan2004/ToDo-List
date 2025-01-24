@@ -64,14 +64,18 @@
 </head>
 
 <body>
+     
+     
      <header>
           <h1>ToDo List App</h1>
      </header>
-
+     
+     <div class="main">
      <a th:href="@{/todo/add-task-page}" class="addbutton">Add New Task</a>
      <table>
           <thead>
                <tr>
+                    <th>Completed</th>
                     <th>Sr. No</th>
                     <th>Task</th>
                     <th>Description</th>
@@ -81,13 +85,18 @@
           <tbody>
                <!-- Iterate over the tasks list -->
                <tr th:each="task, taskStat : ${Tasks}">
+                    <!-- <td><label class="custom-checkbox">
+                         <input type="checkbox">
+                         <span class="checkmark"></span>
+                    </label></td> -->
                     <!-- Serial number starts from 1 -->
                     <td th:text="${taskStat.index + 1}"></td>
-
+                    
                     <!-- Hidden ID field -->
                     <td class="hidden">
                          <input type="hidden" th:value="${task.id}" />
                     </td>
+                   
 
                     <!-- Task Title -->
                     <td th:text="${task.title}"></td>
@@ -106,6 +115,7 @@
                </tr>
           </tbody>
      </table>
+     </div>
      <script>
           function deleteTask(taskId) {
                console.log(taskId);
