@@ -47,13 +47,13 @@ Welcome to the **To-Do List Application** project! This simple and user-friendly
 ## 📸 Screenshots
 
 1. **Home Page or Task List** 🏠
-   ![Home Page](https://i.imgur.com/MsuDdQQ.png)
+   ![Home Page](https://github.com/user-attachments/assets/4009ee10-e9cd-4069-8e2b-97d2b000021e)
 
 2. **Add Task Page** ➕
-   ![Add Task Page]( https://i.imgur.com/1xGZJRw.png)
+   ![Add Task Page](https://github.com/user-attachments/assets/3572737e-40ea-426c-bec9-a8c72cf0fd56)
 
 3. **Edit Task Page** ✏️
-   ![Edit Task Page](https://i.imgur.com/l0gNIE0.png)
+   ![Edit Task Page](https://github.com/user-attachments/assets/cee4d7e4-b16a-4983-bb0c-8c75e65e47ef)
 
 
 ## 💡 Future Enhancements
