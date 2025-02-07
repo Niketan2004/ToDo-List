@@ -4,135 +4,70 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="" th:href="@{/style.css}">
-     <!-- <style>
-          /* Basic styles */
-          body {
-               font-family: sans-serif;
-               margin: 0;
-               padding: 0;
-          }
-
-          /* Header styles */
-          header {
-               background-color: #f0f0f0;
-               padding: 20px;
-               text-align: center;
-          }
-
-          h1 {
-               margin: 0;
-          }
-
-          /* Table styles */
-          table {
-               border-collapse: collapse;
-               width: 100%;
-               margin: 20px 0;
-          }
-
-          th,
-          td {
-               padding: 10px;
-               border: 1px solid #ddd;
-               text-align: left;
-          }
-
-          th {
-               background-color: #f0f0f0;
-          }
-
-          /* Action buttons styles */
-          a {
-               text-decoration: none;
-               color: #333;
-               padding: 5px 10px;
-               border: 1px solid #ddd;
-               border-radius: 3px;
-          }
-
-          a:hover {
-               background-color: #eee;
-          }
-
-          /* Hidden ID field styles */
-          .hidden {
-               display: none;
-          }
-     </style> -->
      <title>Todo List</title>
+     <link rel="stylesheet" th:href="@{/css/output.css}">
 </head>
 
-<body>
-     
-     
-     <header>
-          <h1>ToDo List App</h1>
+<body class="bg-[#1A202C] min-h-screen  items-center justify-center font-sans text-white wig">
+
+     <header class="bg-[#283142] w-full py-4 text-center sticky">
+          <h1 class="text-3xl font-bold text-white">ToDo List App</h1>
      </header>
-     
-     <div class="main">
-     <a th:href="@{/todo/add-task-page}" class="addbutton">Add New Task</a>
-     <table>
+
+     <a th:href="@{/todo/add-task-page}"
+          class="bg-[#374151] flex w-36  text-white px-4 py-4 my-8 ml-24 rounded-full transition duration-500 hover:bg-[#4B5563]  font-semibold ">
+          Add New Task
+     </a>
+
+     <table class="w-4/5 mt-8 ml-28 border-collapse rounded-lg shadow-md bg-[#283142] font-semibold ">
           <thead>
-               <tr>
-                    <th>Completed</th>
-                    <th>Sr. No</th>
-                    <th>Task</th>
-                    <th>Description</th>
-                    <th colspan="2">Action</th>
+               <h4 class="text-center font-bold text-slate-300 font text-3xl ">Your Tasks </h4>
+               <tr class="bg-[#374151] text-white text-center">
+                    <th class="py-3 px-4 ">Sr. No</th>
+                    <th class="hidden"></th>
+                    <th class="py-3 ">Task</th>
+                    <th class="py-3 ">Description</th>
+                    <th class="py-3 " colspan="2">Action</th>
                </tr>
           </thead>
           <tbody>
-               <!-- Iterate over the tasks list -->
-               <tr th:each="task, taskStat : ${Tasks}">
-                    <!-- <td><label class="custom-checkbox">
-                         <input type="checkbox">
-                         <span class="checkmark"></span>
-                    </label></td> -->
-                    <!-- Serial number starts from 1 -->
-                    <td th:text="${taskStat.index + 1}"></td>
-                    
-                    <!-- Hidden ID field -->
-                    <td class="hidden">
-                         <input type="hidden" th:value="${task.id}" />
+               <tr th:each="task, taskStat : ${Tasks}" class="border-b border-gray-700">
+                    <td class="py-2 px-4 text-center" th:text="${taskStat.index + 1}"></td>
+                    <td class="hidden"><input type="hidden" th:value="${task.id}" /></td>
+                    <td class="py-2 px-4" th:text="${task.title}"></td>
+                    <td class="py-2 px-4" th:text="${task.description}"></td>
+                    <td class="py-2 px-4 text-center">
+                         <a th:href="@{/todo/add-task-page/{id}(id=${task.id})}"
+                              class="edit-btn bg-[#053508] text-[#eaebed] border-2 border-[#6bff49] px-3 py-1 rounded-md hover:bg-[#39bc4c] transition duration-300">
+                              Edit
+                         </a>
                     </td>
-                   
-
-                    <!-- Task Title -->
-                    <td th:text="${task.title}"></td>
-
-                    <!-- Task Description -->
-                    <td th:text="${task.description}"></td>
-
-                    <!-- Edit and Delete actions -->
-                    <td>
-                         <a th:href="@{/todo/add-task-page/{id}(id=${task.id})}" class="edit-btn">Edit</a>
-                         <!-- <a th:href="@{/add-task-page(id=${task.id})}">Edit</a> -->
+                    <td class="py-2 px-4 text-center">
+                         <button
+                              class="delete-btn bg-red-600 text-white px-3 py-1 rounded-md border-2 border-[#450808] hover:bg-red-800 transition duration-300"
+                              th:attr="onclick='deleteTask(' + ${task.id} + ')'">
+                              Delete
+                         </button>
                     </td>
-                    <td><input type="button" class="delete-btn" value="Delete"
-                              th:attr="onclick='deleteTask(' + ${task.id} + ')'"></td>
-
                </tr>
           </tbody>
      </table>
-     </div>
      <script>
           function deleteTask(taskId) {
-               console.log(taskId);
                fetch(`/todo/task/${taskId}`, {
                     method: 'DELETE',
                })
                     .then(response => {
                          if (response.ok) {
                               alert('Task deleted successfully!');
-                              window.location.reload(); // Reloads the page
+                              window.location.reload();
                          } else {
                               alert('Error deleting Task.');
                          }
                     });
           }
-
      </script>
+
 </body>
 
 </html>
