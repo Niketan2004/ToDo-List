@@ -8,40 +8,58 @@ Welcome to the **To-Do List Application** project! This simple and user-friendly
 - ✏️ Edit tasks effortlessly.
 - ❌ Delete tasks you no longer need.
 - 📆 View all your tasks in a structured manner.
+- 🎨 Enhanced UI with Tailwind CSS for a sleek and responsive design.
 - 💻 Built with Spring Boot and Thymeleaf for seamless functionality.
 
 ## 🛠️ Technologies Used
 
 - **Backend**: Spring Boot
-- **Frontend**: Thymeleaf, HTML, CSS, JavaScript
+- **Frontend**: Thymeleaf, HTML, Tailwind CSS, JavaScript
 - **Database**: MySQL
 - **Tools**: Maven, Postman
 
+## Project Structure
+```
+📦 To-Do List Application
+ ┣ 📂 src/main/java/com/todo
+ ┃ ┣ 📜 controller/TaskController.java
+ ┃ ┣ 📜 model/Task.java
+ ┃ ┣ 📜 repository/TaskRepository.java
+ ┃ ┗ 📜 service/TaskService.java
+ ┣ 📂 src/main/resources
+ ┃ ┣ 📂 static (CSS & JS files)
+ ┃ ┣ 📂 templates (Thymeleaf HTML files)
+ ┃ ┗ 📜 application.properties
+ ┣ 📜 pom.xml (Maven dependencies)
+ ┗ 📜 README.md
+```
+ 
 ## 🎯 How to Run
 
 1. Clone this repository:
    ```bash
    git clone https://github.com/Niketan2004/ToDo-List.git
-   ```
+   ``` 
+2. Go to `application.properties` and make Database Configuration.
 
-2. Navigate to the project directory:
+3. Navigate to the project directory:
    ```bash
    cd todo-list-application
    ```
 
-3. Build the project using Maven:
+4. Build the project using Maven:
    ```bash
    mvn clean install
    ```
 
-4. Run the application:
+5. Run the application:
    ```bash
    mvn spring-boot:run
    ```
 
-5. Open your browser and go to:
+6. Open your browser and go to:
    ```
-   http://localhost:8080
+   http://localhost:8080/todo/tasks
    ```
 
 ## 📸 Screenshots
